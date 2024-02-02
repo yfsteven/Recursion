@@ -1,7 +1,6 @@
 //Nonrecursive Fibonacci sequence
 function fibs(num){
     let fibsArray = [];
-    let value = 0;
     for(let i = 0; i < num; i++){
         if(i === 0 || i === 1){
             fibsArray.push(i);
@@ -11,4 +10,13 @@ function fibs(num){
         }
     } 
     return fibsArray;
+}
+//Recursive Fibonacci sequence
+function fibsRec(num){
+    if(num < 2) {
+        return num;
+    }
+    else {
+        return fibsRec(num-2) + fibsRec(num-1);
+    }
 }
