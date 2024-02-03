@@ -20,3 +20,20 @@ function fibsRec(num){
         return fibsRec(num-2) + fibsRec(num-1);
     }
 }
+
+//Merge Sort Function Attempt
+function mergeSort(array){
+    if(array.length === 1){
+        return array;
+    }
+    else {
+        const half = Math.ceil(array.length /2);
+        const leftHalf = array.slice(0, half);
+        const rightHalf = array.slice(half);
+        for(let i = 0; i < array.length; i++){
+            return mergeSort(rightHalf)
+        }
+    }
+}
+
+
