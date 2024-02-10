@@ -23,17 +23,30 @@ function fibsRec(num){
 
 //Merge Sort Function Attempt
 function mergeSort(array){
-    if(array.length === 1){
+    if(array.length < 2){
         return array;
     }
     else {
         const half = Math.ceil(array.length /2);
         const leftHalf = array.slice(0, half);
         const rightHalf = array.slice(half);
-        for(let i = 0; i < array.length; i++){
-            return mergeSort(rightHalf)
+
+        
+        return merge(mergeSort(leftHalf), mergeSort(rightHalf));
+    }
+}
+
+function merge(leftHalf, rightHalf) {
+    let newArray = [];
+
+    while (leftHalf.length && rightHalf.length) {
+        if(leftHalf[0] < rightHalf[0]){
+            newArray.push(leftHalf.shift());
+        } else {
+            newArray.push(rightHalf.shift());
         }
     }
+    return [...newArray, ...leftHalf, ...rightHalf]
 }
 
 
